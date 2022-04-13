@@ -1,0 +1,73 @@
+body {
+    background: #ffdada
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: #ff0800c7;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #ff0000
+}
+
+.profile-button:focus {
+    background: #ff0000;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #ff0000;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #ff0000;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 20px;
+    color:#150e16
+}
+.success{
+    color:green
+}
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(230, 187, 157, 0.8) 0%, #ff966c 100%), url("../../bg.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+  header.masthead h1, header.masthead .h1 {
+    font-size: 2.25rem;
+  }
+  @media (min-width: 992px) {
+    header.masthead {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 4.5rem;
+      padding-bottom: 0;
+    }
+    header.masthead p {
+      font-size: 1.15rem;
+    }
+    header.masthead h1, header.masthead .h1 {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    header.masthead h1, header.masthead .h1 {
+      font-size: 3.5rem;
+    }
+  }
+
