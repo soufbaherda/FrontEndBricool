@@ -3,12 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Register from "./components/login/Register";
-import Login from "./components/login/Login";
-import Navbar from "./components/login/nav";
 import Profil from "./components/login/Profil";
-import RegisterModal from "./components/login/RegisterModal";
-import "./App.scss";
 import Mainbar from './components/login/Mainbar';
 import Home from './components/login/Home';
 export function App(){
