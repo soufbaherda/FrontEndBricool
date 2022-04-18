@@ -37,31 +37,6 @@ function PosterOffre(props) {
   const location = useLocation();
   const { from } = location.state;
 
-  const ImageHandleChange = (e) => {
-    if (e.target.files) {
-      const fileArray = Array.from(e.target.files).map((file) =>
-        URL.createObjectURL(file)
-      );
-      console.log(fileArray);
-      setSelectedImages((prevImages) => prevImages.concat(fileArray));
-      Array.from(e.target.files).map((file) => URL.revokeObjectURL(file));
-    }
-  };
-
-  const renderPhotos = (source) => {
-    return source.map((photo) => {
-      return (
-        <div key = {photo} className="div-selected-img">
-          <img
-            className="selectedImage"
-            src={photo}
-            alt="selectedImg"
-            key={photo}
-          />
-        </div>
-      );
-    });
-  };
 
   var date_publication = Date();
 
@@ -95,7 +70,6 @@ function PosterOffre(props) {
         utilisateur: {
           id : from,
         },
-        images: selectedImages,
       }),
     })
       .then((res) => console.log(res))
@@ -236,15 +210,6 @@ function PosterOffre(props) {
                   <option>Dakhla-Oued Dahab</option>
                 </Form.Select>
                 <br />
-                <Form.Group controlId="formFileMultiple" className="mb-3">
-                  <Form.Control
-                    type="file"
-                    multiple
-                    onChange={ImageHandleChange}
-                  />
-                  <br />
-                  <div className="result">{renderPhotos(selectedImages)}</div>
-                </Form.Group>
               </Form>
             </Col>
             <Col className="col-caroussel">
