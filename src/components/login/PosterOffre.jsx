@@ -20,10 +20,6 @@ import plumber from "./images/plumbier.png";
 function PosterOffre(props) {
   const [titre, setTitre] = useState([]);
   const [description, setDescription] = useState([]);
-  const [nom, setNom] = useState([]);
-  const [prenom, setPrenom] = useState([]);
-  const [telephone, setTelephone] = useState([]);
-  const [email, setEmail] = useState([]);
   const [date_service, setDate_service] = useState(new Date());
   const [ville, setVille] = useState([]);
   const [region, setRegion] = useState([]);
@@ -94,10 +90,7 @@ function PosterOffre(props) {
         ville: ville,
         region: region,
         utilisateur: {
-          nom: nom,
-          prenom: prenom,
-          email: email,
-          telephone: telephone,
+          id : props.idutilisateur,
         },
         images: selectedImages,
       }),
@@ -105,25 +98,7 @@ function PosterOffre(props) {
       .then((res) => console.log(res))
       .catch((error) => console.log(error))
       .then(console.log(field));
-    console.log(nom);
   };
-  /*
-  const sendEmployer = () => {
-    fetch("http://localhost:8080/mouloffre", {
-      method: "POST",
-      headers: {
-       "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        "nom": nom,
-        "prenom": prenom,
-        "telephone": telephone,
-        "email": email,
-      }),
-    })
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
-  };*/
 
   const handleChange1 = (event) => {
     setTitre(event.target.value);
@@ -132,23 +107,7 @@ function PosterOffre(props) {
   const handleChange2 = (event) => {
     setDescription(event.target.value);
   };
-
-  const handleChange5 = (event) => {
-    setNom(event.target.value);
-  };
-
-  const handleChange6 = (event) => {
-    setPrenom(event.target.value);
-  };
-
-  const handleChange7 = (event) => {
-    setTelephone(event.target.value);
-  };
-
-  const handleChange8 = (event) => {
-    setEmail(event.target.value);
-  };
-
+  
   const handleChange9 = (event) => {
     setVille(event.target.value);
   };
@@ -189,62 +148,6 @@ function PosterOffre(props) {
           <Row>
             <Col className="info-text">
               <Form noValidate validated={validated}>
-                <Form.Group controlId="validationCustom01">
-                  <Form.Control
-                    className="info"
-                    size="xs"
-                    type="text"
-                    placeholder="Prénom"
-                    onChange={handleChange6}
-                    required
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    veuillez entrer votre prénom.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <br />
-                <Form.Group controlId="validationCustom02">
-                  <Form.Control
-                    className="info"
-                    size="xs"
-                    type="text"
-                    placeholder="Nom"
-                    onChange={handleChange5}
-                    required
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    veuillez entrer votre nom.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <br />
-                <Form.Group controlId="validationCustom03">
-                  <Form.Control
-                    size="xs"
-                    type="text"
-                    placeholder="adresse email"
-                    className="info"
-                    onChange={handleChange8}
-                    required
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    veuillez donner une adresse mail.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <br />
-                <Form.Group controlId="validationCustom04">
-                  <Form.Control
-                    size="xs"
-                    type="text"
-                    placeholder="numéro de téléphone"
-                    className="info"
-                    onChange={handleChange7}
-                    required
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    veuillez entrer votre numéro de telephone.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <br />
                 <Form.Group controlId="validationCustom05">
                   <Form.Control
                     size="xs"
