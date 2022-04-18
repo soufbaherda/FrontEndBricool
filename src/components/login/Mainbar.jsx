@@ -148,7 +148,7 @@ const Mainbar = () => {
         </Link>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <Search>
+          {/*<Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -156,7 +156,7 @@ const Mainbar = () => {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search>*/}
           </Box>
           {connecte===false 
           ?
@@ -185,7 +185,7 @@ const Mainbar = () => {
                 Poster offre
               </Button>
               <Button
-                component={Link} to={'/Chercher'} 
+                component={Link} to={'/Chercher'} state={{ from: User.id}}
                 key="offres"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}

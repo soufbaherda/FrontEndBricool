@@ -1,0 +1,362 @@
+#Brand {
+  color: #ffcbcb;
+}
+
+
+#home {
+  color: #F95C19;
+}
+
+#profil {
+  color: #F95C19;
+}
+
+#log-in {
+  color: #F95C19;
+}
+
+#sign-in {
+  color: #F95C19;
+}
+
+#formulaire {
+  background-color: #fda766;
+}
+
+.container-fluid {
+  padding: 7% 15%;
+  background-color: #ffcbcb;
+}
+
+footer {
+  background-color: rgb(27, 27, 27);
+  height: 2.5rem;
+  bottom: 0%;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+}
+
+.phrase h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: auto;
+  padding: 30px;
+  text-align: center;
+
+
+}
+.ph{
+  font-weight: auto;
+  text-align: center; 
+
+}
+
+.title-container {
+  color: black;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.picture {
+  padding: 4% 4%;
+}
+
+.title-row {
+  height: 400px;
+}
+
+.formaulaire-container {
+  padding: 7% 15%;
+}
+
+
+
+.Description-job {
+  font-family: "Montserrat", sans-serif;
+  color: gray;
+}
+
+.info {
+  background-color: transparent;
+}
+
+.Domaine-card {
+  width: 50%;
+  
+ 
+}
+.color-nav {
+  position: relative;
+  background: #131313;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  z-index: 99;
+}
+.Domaine-container {
+  height: auto;
+  
+}
+
+
+.logo {
+  width: 10%;
+}
+
+.logofooter {
+  width: 10%;
+  position: relative;
+  margin: auto;
+}
+
+.copyrightp{
+  color : white;
+}
+img{
+  width: auto;
+  height: auto ;
+  
+}
+.homesize{
+  margin: 20px auto ;
+  width: 80%;
+  padding: 15px;
+
+  
+}
+.text{
+  position: relative;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  
+}
+.im{
+  position: relative;
+  width: 500px;
+  left: 50%;
+  transform: translate(-50%,0%);
+  text-align: center;
+}
+.btn{
+width: 190px;
+position: relative;
+height: 49px;
+background: #F95C19;
+border-radius: 5px;
+left: 50%;
+color: white;
+transform: translate(-50%,-50%);
+
+
+}
+.liste{
+  position: relative;
+  height: auto;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #F95C19;
+  margin: 50px;
+  width: 200px;
+}
+
+
+#results{
+  margin: 5%;
+  background: #ffffff;
+  display: block;
+  justify-content: center;
+  margin-top:0.5% ;
+  padding:1%;
+  border: 10px;
+  background-color: #f1f1f1;
+}
+
+#postuler{
+  margin-top: 1%;
+  display: flex;
+  background: rgba(222, 222, 222, 0.75);
+  border-radius: 10px;
+  padding:auto;
+  
+}
+
+#iconcont{
+  width: 20%;
+  height: 10%;
+  padding: 1%;
+}
+
+#icon{
+  width: 50%;
+  height: 50%;
+}
+
+#infos{
+  width:70%;
+  padding: 1%;
+  display: block;
+  justify-content: center;
+}
+#employee{
+  font-family: Candara;
+  font-size: 125%;
+  width: 70%;
+  height: 30%;
+  
+  overflow: hidden;
+}
+#prix{
+  font-family: Candara;
+  width: 50%;
+  height: 30%;
+  text-align: right;
+  margin: 0;
+  font-weight: bold; 
+}
+#description{
+  font-family: Candara;
+  width: 50%;
+  height: 50%;
+  text-align: left;
+}
+#duree{
+  font-family: Candara;
+  width: 30%;
+  height: 30%;
+  text-align: right;
+}
+#validation{
+  width: 10%;
+  display: block;
+  justify-content: center;
+}
+
+#check{
+  font-family: Candara;
+  background: #F95C19;
+  border-color: #F95C19;
+  color: white;
+  border: none;
+  width:100%;
+  height: 100%;
+}
+
+#check:hover{
+  font-family: Candara;
+  background: #F95C19;
+  border-color: #F95C19;
+  color: black;
+  border: none;
+  width:100%;
+  height: 100%;
+}
+
+#check:active{
+  font-family: Candara;
+  background: black;
+  border-color: #F95C19;
+  color: white;
+  border: none;
+  width:100%;
+  height: 100%;
+}
+
+#hide {
+  font-family: Candara;
+  background: red;
+  border-color: #F95C19;
+  color: white;
+  border: none;
+  width: 100%;
+  height: 50%;
+}
+
+#hide:hover {
+  font-family: Candara;
+  background: red;
+  border-color: #F95C19;
+  color: black;
+  border: none;
+  width: 100%;
+  height: 50%;
+}
+
+#hide:active {
+  font-family: Candara;
+  background: black;
+  border-color: #F95C19;
+  color: white;
+  border: none;
+  width: 100%;
+  height: 50%;
+}
+
+#delete{
+  width: 10%;
+  display: block;
+  justify-content: center;
+}
+
+#accept {
+  font-family: Candara;
+  background: green;
+  border-color: #F95C19;
+  color: white;
+  border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#accept:hover {
+  font-family: Candara;
+  background: green;
+  border-color: #F95C19;
+  color: black;
+  border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+#accept:active {
+  font-family: Candara;
+  background: black;
+  border-color: #F95C19;
+  color: white;
+  border: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+#btn1{
+width:170px;
+height: 40px;
+background: #F95C19;
+border-radius: 5px;
+color: white;
+position: absolute;
+right: 5%;
+display: block;
+}
+
+#back {
+  position: relative;
+}
+
+.desarchiver-container {
+  margin-bottom: 70px;
+}

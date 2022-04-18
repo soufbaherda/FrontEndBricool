@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import del from "./images/delivery.jpg";
-import "./listeoffre.css"
-
-import demande from './images/demande.jpg'
-
-import { BrowserRouter, Route,  Link } from "react-router-dom";
-import { Button } from "bootstrap";
+import demande from './images/demande.jpg';
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import "./offre.css"
+import Postuler from "./Postuler";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 
@@ -13,13 +13,18 @@ export default function ListeOffere(props) {
     //const paperStyle = { padding: '50px 20px', width: 600, margin: "20px auto" };
     const location = useLocation();
     const { from } = location.state;
-    const [Offres, setOffres] = useState([])
+    var id = from;
+    const [Offres, setOffres] = useState([]);
     //const classes = useStyles(false)
+    const [show, setShow] = useState(false);
+    const [fullscreen, setFullscreen] = useState(true);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const rafraichir = () => {
-        fetch("http://localhost:8080/offre/GetOffreEmp/"+from)
+        fetch("http://localhost:8080/offre/GetOffreEmp/" + id)
             .then(res => res.json())
             .then((result) => {
-                setOffres(result);console.log(result)
+                setOffres(result);
             }
             )
     }
@@ -33,7 +38,7 @@ export default function ListeOffere(props) {
 
     return (
         <div id={"back"}>
-            <img className="im" style={{ width: "40%" }}
+            <img className="im" style={{width :"30%"}}
                 src={demande} alt="demande" />
             <div className="desarchiver-container">
                 <h2 className="ph" >Mes Offres </h2>
@@ -56,13 +61,26 @@ export default function ListeOffere(props) {
                                 <img id={"icon"} src={del} /></div>
                             <div id={"infos"}>
                                 <label id={"employee"}>{Offre.titre}</label>
-                                <label id={"description"}>{Offre.description}</label>
-                                <label id={"duree"}>{Offre.domaine}</label>
+                                <label id={"description"}>{"description: "+Offre.description}</label>
+                                <label id={"duree"}>{"domaine: "+Offre.domaine}</label>
                                 <label id={"prix"}>{Offre.ville}</label>
                             </div>
                             <div id="delete">
-                                < button id={"accept"} >Demandes</button>
-
+                                < button id={"accept"} variant="primary" onClick={handleShow}>Demandes</button>
+                                <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose} >
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Modal heading</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>
+                                        <Postuler id={Offre.id} />
+                                        
+                                    </Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="secondary" onClick={handleClose}>
+                                            Close
+                                        </Button>
+                                    </Modal.Footer>
+                                </Modal>
                             </div>
                         </div>
 

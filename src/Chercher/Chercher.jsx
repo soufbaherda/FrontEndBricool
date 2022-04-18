@@ -4,9 +4,12 @@ import sch from "./Ressources/Search.png"
 import sh from "./Ressources/Sh.png"
 import DetailModal from "./DetailModal/DetailModal";
 import {styled, TextField} from "@mui/material";
+import { useLocation } from "react-router-dom";
 
 
 function Chercher() {
+    const location = useLocation();
+    const { from } = location.state;
     const [data, setData] = useState([]);
     const [tres,setTres] = useState("");
     const [nres, setNres] = useState("");
@@ -166,7 +169,7 @@ function Chercher() {
                                     <label id={"place"}>{item["ville"]}</label>
                                 </div>
                                 <label id={"details"} onClick={()=>{setModalShow(true);setI(item);FindUser(item.utilisateur.id)}}>Voir plus</label >
-                                <DetailModal item = {i} user = {user} show={modalShow} onHide={() => setModalShow(false)} />
+                                <DetailModal item = {i} idUser ={from}user = {user} show={modalShow} onHide={() => setModalShow(false)} />
 
                             </div>
                         );

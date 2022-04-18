@@ -16,7 +16,7 @@ function DetailModal(props) {
     const [description, setDescription] = useState("");
 
     const postuler = () => {
-        fetch("http://localhost:8080/postulation/post",{
+        fetch("http://localhost:8080/postulation/post", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -25,9 +25,9 @@ function DetailModal(props) {
                 "prix": prix,
                 "duree": duree,
                 "description": description,
-                "idOffre" : props.item.id,
-                "utilisateur": {
-                    "id" : props.idutilisateur,
+                "idOffre": props.item.id,
+                "employee": {
+                    "id": props.idUser,
                 },
             }),
         });
@@ -36,7 +36,7 @@ function DetailModal(props) {
 
 
     const handleChange5 = (event) => {
-       setDomaine(event.target.value);
+        setDomaine(event.target.value);
     };
     const handleChange6 = (event) => {
         setDescription(event.target.value);
@@ -48,7 +48,7 @@ function DetailModal(props) {
         setPrix(event.target.value);
     };
 
-    const handleSubmit= (event)=>{
+    const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
@@ -145,76 +145,63 @@ function DetailModal(props) {
                             <th scope="col">Postulat</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <Container>
-                            <Row>
-                                <Col>
-                                    <Form noValidate validated={validated} >
-                                        <Form.Group controlId="validationCustom05">
-                                            <Form.Control
-                                                size="xs"
-                                                type="text"
-                                                placeholder="duree"
-                                                onChange={handleChange7}
-                                                required
-                                            ></Form.Control>
-                                            <Form.Control.Feedback type="invalid">
-                                                veuillez entrer une duree
-                                            </Form.Control.Feedback>
-                                        </Form.Group>
-                                        <br />
-                                        <Form.Group controlId="validationCustom06">
-                                            <Form.Control
-                                                size="xs"
-                                                type="text"
-                                                placeholder="prix"
-                                                onChange={handleChange8}
-                                                required
-                                            ></Form.Control>
-                                            <Form.Control.Feedback type="invalid">
-                                                veuillez entrer un prix
-                                            </Form.Control.Feedback>
-                                        </Form.Group>
-                                        <br />
-                                        <Form.Group controlId="validationCustom07">
-                                            <Form.Control
-                                                size="xs"
-                                                type="text"
-                                                placeholder="domaine"
-                                                onChange={handleChange5}
-                                                required
-                                            ></Form.Control>
-                                            <Form.Control.Feedback type="invalid">
-                                                veuillez entrer un domaine
-                                            </Form.Control.Feedback>
-                                        </Form.Group>
-                                        <br />
-                                        <Form.Group controlId="validationCustom08">
-                                            <Form.Control
-                                                size="xs"
-                                                as="textarea"
-                                                placeholder="description"
-                                                onChange={handleChange6}
-                                                required
-                                            ></Form.Control>
-                                            <Form.Control.Feedback type="invalid">
-                                                veuillez entrer une description
-                                            </Form.Control.Feedback>
-                                        </Form.Group>
-                                    </Form>
-                                </Col>
-                            </Row>
-                        </Container>
+                        <tbody>{
+                            <Container>
+                                <Row>
+                                    <Col>
+                                        <Form noValidate validated={validated}>
+                                            <Form.Group controlId="validationCustom05">
+                                                <Form.Control
+                                                    size="xs"
+                                                    type="text"
+                                                    placeholder="duree"
+                                                    onChange={handleChange7}
+                                                    required
+                                                ></Form.Control>
+                                                <Form.Control.Feedback type="invalid">
+                                                    veuillez entrer une duree
+                                                </Form.Control.Feedback>
+                                            </Form.Group>
+                                            <br/>
+                                            <Form.Group controlId="validationCustom06">
+                                                <Form.Control
+                                                    size="xs"
+                                                    type="text"
+                                                    placeholder="prix"
+                                                    onChange={handleChange8}
+                                                    required
+                                                ></Form.Control>
+                                                <Form.Control.Feedback type="invalid">
+                                                    veuillez entrer un prix
+                                                </Form.Control.Feedback>
+                                            </Form.Group>
+                                            <br/>
+                                            <Form.Group controlId="validationCustom08">
+                                                <Form.Control
+                                                    size="xs"
+                                                    as="textarea"
+                                                    placeholder="description"
+                                                    onChange={handleChange6}
+                                                    required
+                                                ></Form.Control>
+                                                <Form.Control.Feedback type="invalid">
+                                                    veuillez entrer une description
+                                                </Form.Control.Feedback>
+                                            </Form.Group>
+                                        </Form>
+                                    </Col>
+                                </Row>
+                            </Container>}
                         </tbody>
                     </table>
                 </Container>
             </Modal.Body>
             <Modal.Footer>
                 <Button id={"button"} onClick={props.onHide}>Fermer</Button>
-                <Button id ={"button"} onClick={handleSubmit}>Postuler</Button>
+                <Button id={"button"} onClick={handleSubmit}>Postuler</Button>
             </Modal.Footer>
         </Modal>
-);
+    );
 }
 
 export default DetailModal;
