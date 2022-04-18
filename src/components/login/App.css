@@ -1,0 +1,160 @@
+#Brand {
+  color: #ffcbcb;
+}
+
+.color-nav {
+  background: linear-gradient(to right , #fad3cf , white);
+}
+
+#home {
+  color: #f16821;
+}
+
+#profil {
+  color: #f16821;
+}
+
+#log-in {
+  color: #f16821;
+}
+
+#sign-in {
+  color: #f16821;
+}
+
+#formulaire {
+  background-color: #fda766;
+}
+
+.container-fluid {
+  padding: 7% 15%;
+  background-color: #ffcbcb;
+}
+
+footer {
+  background-color: rgb(27, 27, 27);
+  height: 2.5rem;
+  position: fixed;
+  bottom: 0%;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+}
+.Post {
+  background-color: #fcf8f3;
+}
+
+.phrase h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  padding: 25% 25%;
+}
+
+.title-container {
+  height: 500px;
+}
+
+.picture {
+  padding: 4% 4%;
+}
+
+.title-row {
+  height: 400px;
+}
+
+#forms {
+  height: 1500px;
+  background-color: #fcf8f3;
+}
+
+.info-text {
+  padding: 5% 10%;
+  background-color: white;
+  width: 50%;
+}
+
+.date_place_row{
+  background-color: white;
+  height : 100px;
+}
+
+.Description-job {
+  font-family: "Montserrat", sans-serif;
+  color: gray;
+}
+
+.info {
+  background-color: transparent;
+}
+
+.Domaine-card {
+  margin: auto;
+}
+
+.Domaine-container {
+  height: 550px;
+}
+
+.confirmation-container {
+  height: 150px;
+}
+
+.Confirm-btn {
+  margin-left: 545px;
+  width: 15%;
+}
+
+.logo {
+  width: 10%;
+}
+
+.logofooter {
+  width: 10%;
+}
+
+.copyrightp{
+  color : white;
+}
+
+.priorite{
+  text-align: center;
+  width:100px;
+}
+
+.priorite-label{
+  font-family: "Montserrat", sans-serif;
+  color: gray;
+}
+
+.col-caroussel{
+  padding: 0% 10%;
+}
+.carousel-control-prev-icon{
+  background-color: black;
+}
+.carousel-control-next-icon{
+  background-color: black;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+}
+
+.selectedImage{
+  height : 15%;
+  width : 15%;
+}
+
+.div-selected-img{
+  display: inline;
+  padding : 2%;
+}
