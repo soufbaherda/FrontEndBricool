@@ -1,0 +1,16 @@
+#button{
+    background: #FF8800;
+    color: #FFF8F0;
+    border: none;
+}
+#button:hover{
+    background: #ffc078;
+    color: #131313;
+    border: none;
+}
+#button:active{
+
+    background: #131313;
+    color: #FFF8F0;
+    border: none;
+}

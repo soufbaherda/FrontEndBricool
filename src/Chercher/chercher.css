@@ -1,0 +1,431 @@
+body{
+    background: #FFF8F0;
+}
+
+#Search{
+    margin: 5%;
+    background: none;
+    display: block;
+    justify-content: center;
+    margin-top:0.5% ;
+
+}
+
+#iconglb{
+    width: 50%;
+    margin-left: 25%;
+}
+#searchblock{
+    display: block;;
+    position: center;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+
+#search{
+    font-family: Candara;
+    background: #FF8800;
+    color: #FFF8F0;
+    width: 20%;
+    height: available;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 40%;
+}
+
+#search:hover{
+    font-family: Candara;
+    background: #FFC078;
+    color: black;
+    width: 20%;
+    height: available;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 40%;
+
+}
+
+#search:active{
+    font-family: Candara;
+    background: #131313;
+    color: #FFF8F0;
+    width: 20%;
+    height: available;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 40%;
+
+}
+
+#filter{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    font-family: Candara;
+    width: 100%;
+}
+
+#regionblock{
+    display: block;
+    justify-content: center;
+    width: 25%;
+    padding:1%;
+    max-width: 20%;
+}
+
+#region{
+    font-family: Candara;
+    width: 100%;
+}
+
+#regionlist{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #131313;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+#regionlist:hover{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #894E0A;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+#regionlist:focus{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #FF8800;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+
+#villeblock{
+    display: block;
+    justify-content: center;
+    width: 25%;
+    padding:1%;
+}
+
+#ville{
+    font-family: Candara;
+    width: 100%;
+}
+
+#villeinput{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #131313;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+#villeinput:hover{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #894E0A;
+    border-radius: 5px;
+    outline: #FF8800 2px;
+    background: none;
+    text-align: center;
+}
+#villeinput:focus{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #FF8800;
+    border-radius: 5px;
+    outline: #FF8800 2px;
+    background: none;
+    text-align: center;
+}
+
+#domainblock{
+    display: block;
+    justify-content: center;
+    width: 25%;
+    padding:1%;
+}
+
+#domain{
+    font-family: Candara;
+    width: 100%;
+}
+
+#domainlist{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #131313;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+
+}
+#domainlist:hover{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #894E0A;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+#domainlist:focus{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #FF8800;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+
+
+#dateblock{
+    display: block;
+    justify-content: center;
+    width: 25%;
+    padding:1%;
+}
+
+#date{
+    font-family: Candara;
+    width: 100%;
+}
+
+#datepicker{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #131313;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+#datepicker:hover{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #894E0A;
+    border-radius: 5px;
+    background: none;
+    text-align: center;
+}
+#datepicker:focus{
+    font-family: Candara;
+    width: 100%;
+    height: 50%;
+    border: 2px;
+    border-style: solid;
+    border-color: #FF8800;
+    border-radius: 5px;
+    outline: #FF8800 2px;
+    background: none;
+    text-align: center;
+}
+
+#results{
+    margin: 5%;
+    background: none;
+    display: block;
+    justify-content: center;
+    margin-top:0.5% ;
+    padding:1%;
+    border: 10px;
+    border-color:#000000 ;
+}
+
+#offres{
+    margin-top: 1%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: none;
+    border-radius: 10px;
+}
+#offer{
+    display: block;
+    background: rgba(255, 136, 0, 0.05);
+    /*background: #FFF8F0*/;
+    width:23%;
+    margin: 1%;
+    border-style: solid;
+    border-color: #131313;
+    border-radius: 10px;
+}
+
+#iconcont{
+    width: 100%;
+    crop: auto;
+    padding: 1%;
+    position: center;
+    justify-content: center;
+}
+
+#icon{
+    width: 50%;
+    height: 50%;
+}
+
+#infos{
+    width:70%;
+    padding: 1%;
+    display: block;
+    justify-content: center;
+}
+
+#employer{
+    display: flex;
+    padding: 2%;
+}
+#avatar{
+    aspect-ratio:1/1;
+    height: 10%;
+    width: 10%;
+    margin-right: 2%;
+    background: #FF8800;
+    border-radius: 50%;
+}
+#name{
+    margin-left: 2%;
+    width: available;
+}
+#title{
+    font-family: Candara;
+    font-size: 125%;
+    width:100%;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break-wrap: none;
+    white-space: nowrap;
+    margin-right: 1%;
+    margin-left: 1%;
+
+}
+
+#place{
+    font-family: Candara;
+    width: 100%;
+    padding: 1%;
+
+}
+#action{
+    width: 10%;
+    display: block;
+    justify-content: center;
+}
+
+#check{
+    font-family: Candara;
+    background: #F95C19;
+    border-color: #F95C19;
+    color: white;
+    border: none;
+    width:100%;
+    height: 50%;
+}
+
+#check:hover{
+    font-family: Candara;
+    background: #F95C19;
+    border-color: #F95C19;
+    color: black;
+    border: none;
+    width:100%;
+    height: 50%;
+}
+
+#check:active{
+    font-family: Candara;
+    background: black;
+    border-color: #F95C19;
+    color: white;
+    border: none;
+    width:100%;
+    height: 50%;
+}
+
+#listen {
+    font-family: Candara;
+    background: #464646;
+    border-color: #F95C19;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 50%;
+}
+
+#listen:hover {
+    font-family: Candara;
+    background: #777777;
+    border-color: #F95C19;
+    color: black;
+    border: none;
+    width: 100%;
+    height: 50%;
+}
+
+#listen:active {
+    font-family: Candara;
+    background: black;
+    border-color: #F95C19;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 50%;
+}
+
+#details{
+    color: #131313;
+    font-style: italic;
+    width: 100%;
+    text-align: right;
+    padding-right: 2%;
+}
+#details:hover{
+    color: #FF8800;
+    font-style: italic;
+}
+#details:active{
+    color: #FF8800;
+    font-style: italic;
+    font-weight: bold;
+}
