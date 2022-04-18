@@ -1,5 +1,5 @@
 import React from "react";
-import "./profil.css";
+import "./profilSet.css";
 export default function Home(){
     return(
         <header class="masthead">

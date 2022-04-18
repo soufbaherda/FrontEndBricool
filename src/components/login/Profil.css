@@ -1,0 +1,39 @@
+
+.back-profil {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 200px;
+    width: 40%;
+    height: auto;
+    padding: 3%;
+    background-color: #dbe9f8;
+    border-radius: 15px;
+
+}
+#employee{
+    font-family: Candara;
+    font-size: 125%;
+    width: 70%;
+    height: 30%;
+    text-align: center;
+    overflow: hidden;
+}
+.circle {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    margin-top: -100px;
+    background: #0C44A3;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    top: 0%;
+}
+.user{
+    color: white;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

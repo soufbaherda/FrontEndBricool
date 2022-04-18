@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form"
 import Button from "react-bootstrap/Button"
 import { useState } from "react";
 import Col from "react-bootstrap/Col"
-import Profil from "./Profil";
+import Profil from "./ProfilSet";
 import Navbar from "./nav";
 import "./style.scss";
 

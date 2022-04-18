@@ -1,5 +1,5 @@
 import React from "react";
-import "./profil.css";
+import "./profilSet.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useRef } from "react";
@@ -7,7 +7,7 @@ import Avatar from "@mui/material/Avatar";
 import { useLocation } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 
-export default function Profil() {
+export default function ProfilSet() {
   const [compte, setCompte] = useState({});
   const [nom, setNom] = useState("");
   const [prenom, setPrenom] = useState("");

@@ -193,6 +193,14 @@ const Mainbar = () => {
                 {page}
               </Button>
             ))}
+             <Button
+                component={Link} to={'/Mesoffres'} state={{ fromnom: User.nom,fromprenom:User.prenom }}
+                key="mesoffres"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Mes offres
+              </Button>
           </Box>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">

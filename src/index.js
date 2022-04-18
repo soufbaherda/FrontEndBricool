@@ -3,17 +3,21 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Profil from "./components/login/Profil";
+import ProfilSet from "./components/login/ProfilSet";
 import Mainbar from './components/login/Mainbar';
 import Home from './components/login/Home';
 import PosterOffre from './components/login/PosterOffre';
+import Profil from './components/login/profil';
+import ListeOffere from './components/login/ListeOffre';
 export function App(){
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Mainbar />}>
           <Route index element={<Home/>} />
+          <Route path="ProfilSet" element={<ProfilSet />} />
           <Route path="Profil" element={<Profil />} />
+          <Route path="Mesoffres" element={<ListeOffere />} />
           <Route path="Poster" element={<PosterOffre/>} />
         </Route>
       </Routes>
