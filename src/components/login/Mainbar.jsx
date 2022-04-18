@@ -184,6 +184,14 @@ const Mainbar = () => {
               >
                 Poster offre
               </Button>
+              <Button
+                component={Link} to={'/Chercher'} 
+                key="offres"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                consulter offres
+              </Button>
             
              <Button
                 component={Link} to={'/Mesoffres'} state={{ from: User.id}}

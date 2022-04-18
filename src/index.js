@@ -9,6 +9,7 @@ import Home from './components/login/Home';
 import PosterOffre from './components/login/PosterOffre';
 import Profil from './components/login/profil';
 import ListeOffere from './components/login/ListeOffre';
+import Chercher from './Chercher/Chercher';
 export function App(){
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ export function App(){
         <Route path="/" element={<Mainbar />}>
           <Route index element={<Home/>} />
           <Route path="ProfilSet" element={<ProfilSet />} />
+          <Route path="Chercher" element={<Chercher/>} />
           <Route path="Profil" element={<Profil />} />
           <Route path="Mesoffres" element={<ListeOffere />} />
           <Route path="Poster" element={<PosterOffre/>} />
