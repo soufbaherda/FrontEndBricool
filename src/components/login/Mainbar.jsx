@@ -184,15 +184,7 @@ const Mainbar = () => {
               >
                 Poster offre
               </Button>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            
              <Button
                 component={Link} to={'/Mesoffres'} state={{ from: User.id}}
                 key="mesoffres"
