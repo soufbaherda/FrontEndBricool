@@ -91,7 +91,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const pages = ['Poster offre', 'consulter offre'];
+const pages = [ 'consulter offre'];
 const settings = [ 'Compte', 'Parametres'];
 
 const Mainbar = () => {
@@ -146,17 +146,7 @@ const Mainbar = () => {
             src={logo}
         />
         </Link>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           <Search>
             <SearchIconWrapper>
@@ -172,6 +162,7 @@ const Mainbar = () => {
           ?
 
           <>
+          
           <Button color="inherit" onClick={() => setModalShowReg(true)}>S'inscrire</Button>
           <RegisterModal show={modalShowReg}onHide={() => setModalShowReg(false)}/>
           <Button style={{
@@ -183,6 +174,26 @@ const Mainbar = () => {
           <LoginModal updateconnection={handleConnection} show={modalShowLog} onHide={() => setModalShowLog(false)}/>
           </>
           :
+          <>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Button
+                component={Link} to={'/Poster'} state={{ from: User.id }}
+                key="poster offre"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                Poster offre
+              </Button>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
@@ -232,7 +243,7 @@ const Mainbar = () => {
                 </MenuItem>
             </Menu>
             
-          </Box>}
+          </Box></>}
           
         </Toolbar>
       </Container>

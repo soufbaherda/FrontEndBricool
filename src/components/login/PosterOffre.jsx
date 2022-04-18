@@ -16,6 +16,7 @@ import cooking from "./images/cooking.png";
 import delivery from "./images/delivery.jpg";
 import electrician from "./images/electrician.jpg";
 import plumber from "./images/plumbier.png";
+import { useLocation } from "react-router-dom";
 
 function PosterOffre(props) {
   const [titre, setTitre] = useState([]);
@@ -33,6 +34,8 @@ function PosterOffre(props) {
   const [colorPlomberie, setColorPlomberie] = useState("primary");
 
   const [selectedImages, setSelectedImages] = useState([]);
+  const location = useLocation();
+  const { from } = location.state;
 
   const ImageHandleChange = (e) => {
     if (e.target.files) {
@@ -90,7 +93,7 @@ function PosterOffre(props) {
         ville: ville,
         region: region,
         utilisateur: {
-          id : props.idutilisateur,
+          id : from,
         },
         images: selectedImages,
       }),

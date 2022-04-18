@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Profil from "./components/login/Profil";
 import Mainbar from './components/login/Mainbar';
 import Home from './components/login/Home';
+import PosterOffre from './components/login/PosterOffre';
 export function App(){
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ export function App(){
         <Route path="/" element={<Mainbar />}>
           <Route index element={<Home/>} />
           <Route path="Profil" element={<Profil />} />
+          <Route path="Poster" element={<PosterOffre/>} />
         </Route>
       </Routes>
     </BrowserRouter>
