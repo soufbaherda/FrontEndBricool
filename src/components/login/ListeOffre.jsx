@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import del from "./images/delivery.jpg";
+import "./listeoffre.css"
 
 import demande from './images/demande.jpg'
 
@@ -11,16 +12,14 @@ import { useLocation } from "react-router-dom";
 export default function ListeOffere(props) {
     //const paperStyle = { padding: '50px 20px', width: 600, margin: "20px auto" };
     const location = useLocation();
-    const { fromnom,fromprenom } = location.state;
-    var nom = fromnom
-    var prenom = fromprenom
+    const { from } = location.state;
     const [Offres, setOffres] = useState([])
     //const classes = useStyles(false)
     const rafraichir = () => {
-        fetch("http://localhost:8080/offre/GetOffreEmp?nom="+nom+"&prenom="+prenom)
+        fetch("http://localhost:8080/offre/GetOffreEmp/"+from)
             .then(res => res.json())
             .then((result) => {
-                setOffres(result);
+                setOffres(result);console.log(result)
             }
             )
     }
@@ -37,7 +36,7 @@ export default function ListeOffere(props) {
             <img className="im" style={{ width: "40%" }}
                 src={demande} alt="demande" />
             <div className="desarchiver-container">
-                <h2 className="ph" >Mes Offers </h2>
+                <h2 className="ph" >Mes Offres </h2>
             </div>
             <div id={"results"}>
                 <label style={{

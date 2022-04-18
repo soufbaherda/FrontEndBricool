@@ -194,7 +194,7 @@ const Mainbar = () => {
               </Button>
             ))}
              <Button
-                component={Link} to={'/Mesoffres'} state={{ fromnom: User.nom,fromprenom:User.prenom }}
+                component={Link} to={'/Mesoffres'} state={{ from: User.id}}
                 key="mesoffres"
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}

@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Profil.css"
-import Rating from './Rating'
-import RatingStat from './RatingStat'
+import Button from '@mui/material/Button';
+import {  Link } from "react-router-dom";
+
 import { useLocation } from "react-router-dom";
+import Rating from "./Rating";
+
+
 
 export default function Profil() {
     const [employee, setEmployee] = useState(null);
@@ -30,6 +34,12 @@ export default function Profil() {
                     <label id={"employee"}><label style={{ fontWeight: "bold", display: "flex" }} >Tel : </label> {employee.tel}</label>
                     <label id={"employee"}><label style={{ fontWeight: "bold", display: "flex" }} >Adresse : </label> {employee.adresse}</label>
                     <Rating idemploye = {employee.id}/>
+                    <Button
+                component={Link} to={'/ProfilSet'} state={{ from: from}}
+                sx={{ my: 2, color: 'blue', display: 'block' }}
+              >
+                Modifier
+              </Button>
                     
                 </div>
             </div>}

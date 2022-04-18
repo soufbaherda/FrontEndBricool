@@ -1,0 +1,125 @@
+#back {
+    position: relative;
+}
+.im{
+    width: 800px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0%);
+    text-align: center;
+}
+
+.desarchiver-container {
+    margin-bottom: 70px;
+  }
+
+#results{
+    margin: 5%;
+    background: #ffffff;
+    display: block;
+    justify-content: center;
+    margin-top:0.5% ;
+    padding:1%;
+    border: 10px;
+    background-color: #f1f1f1;
+}
+#postuler{
+    margin-top: 1%;
+    display: flex;
+    background: rgba(222, 222, 222, 0.75);
+    border-radius: 10px;
+    padding:auto;
+    
+  }
+  #iconcont{
+    width: 20%;
+    height: 10%;
+    padding: 1%;
+  }
+  
+  #icon{
+    width: 50%;
+    height: 50%;
+  }
+  
+  #infos{
+    width:70%;
+    padding: 1%;
+    display: block;
+    justify-content: center;
+  }
+  #employee{
+    font-family: Candara;
+    font-size: 125%;
+    width: 70%;
+    height: 30%;
+    
+    overflow: hidden;
+  }
+  #prix{
+    font-family: Candara;
+    width: 50%;
+    height: 30%;
+    text-align: right;
+    margin: 0;
+    font-weight: bold; 
+  }
+  #description{
+    font-family: Candara;
+    width: 50%;
+    height: 50%;
+    text-align: left;
+  }
+  #duree{
+    font-family: Candara;
+    width: 30%;
+    height: 30%;
+    text-align: right;
+  }
+  #delete{
+    width: 10%;
+    display: block;
+    justify-content: center;
+  }
+  
+  #accept {
+    font-family: Candara;
+    background: green;
+    border-color: #F95C19;
+    color: white;
+    border: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #accept:hover {
+    font-family: Candara;
+    background: green;
+    border-color: #F95C19;
+    color: black;
+    border: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #accept:active {
+    font-family: Candara;
+    background: black;
+    border-color: #F95C19;
+    color: white;
+    border: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
