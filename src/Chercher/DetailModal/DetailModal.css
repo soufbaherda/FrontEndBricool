@@ -1,7 +1,7 @@
-#button{
+#button1{
     background: #FF8800;
     color: #FFF8F0;
-    border: none;
+    position: relative;
 }
 #button:hover{
     background: #ffc078;

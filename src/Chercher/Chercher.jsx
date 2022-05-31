@@ -158,10 +158,11 @@ function Chercher() {
                 <label id={"infores"}>{nres}</label>
                 <div id ={"offres"}>
                     {data.map((item) => {
+                     
                         return (
                             <div id={"offer"} key = {item.id} >
-                                <div id="iconcont">
-                                    <img id={"icon"} src={sh}/></div>
+                                <div id="iconcont2">
+                                    <img id={"icon2"} src={sh}/></div>
                                 <div id={"Titre"}>
                                     <label id={"title"}>{item["titre"]}</label>
                                 </div>

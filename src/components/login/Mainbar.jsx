@@ -1,17 +1,16 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { styled, alpha } from '@mui/material/styles';
 import MailIcon from '@mui/icons-material/Mail';
@@ -91,24 +90,34 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const pages = [ 'consulter offre'];
-const settings = [ 'Compte', 'Parametres'];
+const pages = ['consulter offre'];
+const settings = ['Compte', 'Parametres'];
 
-const Mainbar = () => {
+const Mainbar = ({ socket }) => {
+  const [notifications, setNotifications] = useState([])
+  const [open, setOpen] = useState(false);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [connecte,setConnecte]=React.useState(false);
-  const [User,setUser]=React.useState({});
+  const [connecte, setConnecte] = React.useState(false);
+  const [User, setUser] = React.useState({});
   const [modalShowReg, setModalShowReg] = React.useState(false);
   const [modalShowLog, setModalShowLog] = React.useState(false);
-  const conn=false;
+  const conn = false;
+  const [nbrNotification,setNbrnotification ]=React.useState(notifications.length);
   localStorage.setItem(false, conn);
-  
+
+
+  useEffect(() => {
+    socket?.on("getNotifocation", (data => {
+      setNotifications((prev) => [...prev, data]);
+    }));
+  }, [socket]);
+  console.log(notifications);
   const handleConnection = (u) => {
     setConnecte(true);
     setUser(u)
   }
-  const persistConnection=()=>{
+  const persistConnection = () => {
     localStorage.setItem(true, conn);
   }
 
@@ -122,33 +131,43 @@ const Mainbar = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  const handleRead = () => {
+    setNotifications([]);
+    setOpen(false);
+  };
 
-  const handleCloseUserMenu = (setting,event) => {
+  const displayNotification = () => {
+    return (
+      <span className="notification">{`Votre demende est accepter.`}</span>
+    );
+  };
+
+  const handleCloseUserMenu = (setting, event) => {
     setAnchorElUser(null);
-    switch(setting){
-      case 'Se deconnecter':{setConnecte(false); localStorage.setItem(false, conn);break;}
-      default:break;
+    switch (setting) {
+      case 'Se deconnecter': { setConnecte(false); localStorage.setItem(false, conn); break; }
+      default: break;
     }
   };
   return (
     <>
-    <AppBar position="static"  style={{ background: '#131313',opacity: 0.8 }} >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-        <Link to="/">
-        <Box 
-            component="img"
-            sx={{
-            height: 75,
-            
-            }}
-            alt="Your logo."
-            src={logo}
-        />
-        </Link>
-          
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          {/*<Search>
+      <AppBar position="static" style={{ background: '#131313', opacity: 0.8 }} >
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Link to="/">
+              <Box
+                component="img"
+                sx={{
+                  height: 75,
+
+                }}
+                alt="Your logo."
+                src={logo}
+              />
+            </Link>
+
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              {/*<Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -157,106 +176,114 @@ const Mainbar = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>*/}
-          </Box>
-          {connecte===false 
-          ?
+            </Box>
+            {connecte === false
+              ?
 
-          <>
-          
-          <Button color="inherit" onClick={() => setModalShowReg(true)}>S'inscrire</Button>
-          <RegisterModal show={modalShowReg}onHide={() => setModalShowReg(false)}/>
-          <Button style={{
-        borderRadius: 35,
-        backgroundColor: "#ff8800",
-        fontSize: "18px"}}
-    variant="contained"
-    onClick={() => setModalShowLog(true)} >Se connecter</Button>
-          <LoginModal updateconnection={handleConnection} show={modalShowLog} onHide={() => setModalShowLog(false)}/>
-          </>
-          :
-          <>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <Button
-                component={Link} to={'/Poster'} state={{ from: User.id }}
-                key="poster offre"
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                Poster offre
-              </Button>
-              <Button
-                component={Link} to={'/Chercher'} state={{ from: User.id}}
-                key="offres"
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                consulter offres
-              </Button>
-            
-             <Button
-                component={Link} to={'/Mesoffres'} state={{ from: User.id}}
-                key="mesoffres"
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                Mes offres
-              </Button>
-          </Box>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={6} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar {...stringAvatar(User.nom+ " "+User.prenom)} />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              <MenuItem component={Link} to={'/Profil'} state={{ from: User.id }}>Profil</MenuItem>
-                
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={event => handleCloseUserMenu(setting,event)}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              
-              ))}
-              <MenuItem key="Se deconnecter" component={Link} to={'/'} onClick={event => handleCloseUserMenu('Se deconnecter',event)}>
-                  <Typography textAlign="center">Se deconnecter</Typography>
-                </MenuItem>
-            </Menu>
-            
-          </Box></>}
-          
-        </Toolbar>
-      </Container>
-    </AppBar>
-    <Outlet/>
+              <>
+
+                <Button color="inherit" onClick={() => setModalShowReg(true)}>S'inscrire</Button>
+                <RegisterModal show={modalShowReg} onHide={() => setModalShowReg(false)} />
+                <Button style={{
+                  borderRadius: 35,
+                  backgroundColor: "#ff8800",
+                  fontSize: "18px"
+                }}
+                  variant="contained"
+                  onClick={() => setModalShowLog(true)} >Se connecter</Button>
+                <LoginModal updateconnection={handleConnection} show={modalShowLog} onHide={() => setModalShowLog(false)} socket={socket} />
+              </>
+              :
+              <>
+
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                  <Button
+                    component={Link} to={'/Poster'} state={{ from: User.id }}
+                    key="poster offre"
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                  >
+                    Poster offre
+                  </Button>
+                  <Button
+                    component={Link} to={'/Chercher'} state={{ from: User.id }}
+                    key="offres"
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                  >
+                    consulter offres
+                  </Button>
+
+                  <Button
+                    component={Link} to={'/Mesoffres'} state={{ from: User.id }}
+                    key="mesoffres"
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: 'white', display: 'block' }}
+                  >
+                    Mes offres
+                  </Button>
+                  {open && ( 
+                    <div className="notifications">
+                      {notifications.map(() => displayNotification())}
+                      {<button className="nButton">
+                        Mark as read
+                      </button> }
+                    </div>
+                  )}
+                </Box>
+                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                  <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                    <Badge badgeContent={0} color="error">
+                      <MailIcon />
+                    </Badge>
+                  </IconButton>
+                  <IconButton
+                    size="large"
+                    aria-label="show 17 new notifications"
+                    color="inherit"
+                  >
+                    <Badge badgeContent={notifications.length} color="error" onClick={() => {setOpen(!open);
+                    }}>
+                      <NotificationsIcon />
+                    </Badge>
+                  </IconButton>
+                  <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <Avatar {...stringAvatar(User.nom + " " + User.prenom)} />
+                    </IconButton>
+                  </Tooltip>
+                  <Menu
+                    sx={{ mt: '45px' }}
+                    id="menu-appbar"
+                    anchorEl={anchorElUser}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    open={Boolean(anchorElUser)}
+                    onClose={handleCloseUserMenu}
+                  >
+                    <MenuItem component={Link} to={'/Profil'} state={{ from: User.id }}>Profil</MenuItem>
+                      <MenuItem key="liste des travaux"  component={Link} to={'/ListeTravaux'}  state={{ from: User.id }} onClick={event => handleCloseUserMenu("liste des travaux", event)}>
+                        <Typography textAlign="center">liste des travaux </Typography>
+                      </MenuItem>
+                    <MenuItem key="Se deconnecter" component={Link} to={'/'} onClick={event => handleCloseUserMenu('Se deconnecter', event)}>
+                      <Typography textAlign="center">Se deconnecter</Typography>
+                    </MenuItem>
+                  </Menu>
+
+                </Box></>}
+
+          </Toolbar>
+        </Container>
+      </AppBar>
+      <Outlet />
+
     </>
   );
 };

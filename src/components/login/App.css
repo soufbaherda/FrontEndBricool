@@ -149,6 +149,18 @@ button {
   color: #ccc;
 }
 
+.notifications {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  color: black;
+  font-weight: 300;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
 .selectedImage{
   height : 15%;
   width : 15%;
@@ -157,4 +169,10 @@ button {
 .div-selected-img{
   display: inline;
   padding : 2%;
+}
+.nButton {
+  background-color: #000;
+  border-radius: 10px;
+  color: white;
+  z-index: 99;
 }

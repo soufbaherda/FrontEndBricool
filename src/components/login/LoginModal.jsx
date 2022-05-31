@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-bootstrap/Modal"
 import LoginTry from "./LoginTry";
 export default function LoginModal(props) {
+    const socket = props.socket;
     return (
       <Modal
         {...props}
@@ -15,7 +16,7 @@ export default function LoginModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <LoginTry  updateconnection={props.updateconnection}/>
+          <LoginTry  updateconnection={props.updateconnection} socket={socket}/>
         </Modal.Body>
       </Modal>
     );
